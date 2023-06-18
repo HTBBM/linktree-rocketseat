@@ -22,8 +22,8 @@
   --text-color: black;
   --bg-url: linear-gradient(
     to bottom right,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 1)
+    rgba(255, 255, 255, 1),
+    rgba(100, 100, 100, 0.6)
   );
   --stroke-color: rgba(89, 89, 89, 0.5);
   --surface-color: rgba(230, 230, 230, 0.7);
