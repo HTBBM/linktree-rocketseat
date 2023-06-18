@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/h-2.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.5);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/h-1.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
@@ -92,11 +92,17 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.4s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+  transition: 0.1s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -114,10 +120,10 @@ body * {
 ul {
   list-style: none;
   /* tira os pontinhos da lista*/
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-direction: row;
   gap: 16px;
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 24px 0;
 }
 
@@ -129,21 +135,19 @@ ul li a {
 
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
-  border-radius: 8px;
+  border-radius: 90px;
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
   text-decoration: none;
   font-weight: 500px;
-
-  transition: background 0.2s;
 }
 
 /* pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
+  transition: 1s;
 }
 
 /* Social-links */
@@ -161,7 +165,8 @@ ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 7px;
+  margin: 9px;
   border-radius: 50%;
   transition: background 0.2s;
 }
@@ -183,5 +188,33 @@ footer {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes fade-down {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 0;
   }
 }
