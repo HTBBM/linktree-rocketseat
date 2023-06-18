@@ -5,22 +5,30 @@
 }
 
 :root {
-  --text-color: cyan;
-  --bg-url: linear-gradient(to bottom right, darkblue, blue);
+  --text-color: white;
+  --bg-url: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 1)
+  );
   --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: blue;
+  --surface-color: rgba(0, 0, 0, 0.3);
   --surface-color-hover: black;
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
-  --text-color: darkblue;
-  --bg-url: linear-gradient(to bottom right, cyan, darkcyan);
-  --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: cyan;
-  --surface-color-hover: white;
-  --highlight-color: rgba(0, 0, 0, 0.1);
+  --text-color: black;
+  --bg-url: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 1)
+  );
+  --stroke-color: rgba(89, 89, 89, 0.5);
+  --surface-color: rgba(230, 230, 230, 0.7);
+  --surface-color-hover: rgba(89, 89, 89, 0.6);
+  --highlight-color: rgba(0, 0, 0, 0.2);
   --switch-bg-url: url(./assets/sun.svg);
 }
 
